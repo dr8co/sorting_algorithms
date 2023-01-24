@@ -34,7 +34,6 @@ void num_sort(deck_node_t **list)
 
 	head_tmp1 = *list;
 	head_tmp2 = *list;
-
 	for (i = 0; i < 4; ++i)
 	{ k =  head_tmp1->card->kind;
 		while (head_tmp1->next && head_tmp1->next->card->kind == k)
@@ -43,23 +42,18 @@ void num_sort(deck_node_t **list)
 			aux_num2 = aux_num_fun(head_tmp1->next);
 			flag = 0;
 			head_tmp2 = head_tmp1;
-
 			while (head_tmp2 && head_tmp2->card->kind == k && aux_num1 > aux_num2)
 			{
 				aux1 = head_tmp2;
 				aux2 = head_tmp2->next;
 				aux1->next = aux2->next;
-
 				if (aux2->next)
 					aux2->next->prev = aux1;
-
 				aux2->prev = aux1->prev;
 				aux2->next = aux1;
 				aux1->prev = aux2;
-
 				if (aux2->prev)
 					aux2->prev->next = aux2;
-
 				head_tmp2 = aux2->prev;
 				if (!aux2->prev)
 					*list = aux2;

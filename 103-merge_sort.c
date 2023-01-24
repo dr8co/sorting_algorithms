@@ -14,7 +14,7 @@ void _merge_sort(int *array, int *temp, size_t size)
 
 	if (size < 2)
 		return;
-	
+
 	half = size / 2;
 
 	_merge_sort(array, temp, half);
@@ -41,7 +41,7 @@ void _merge_sort(int *array, int *temp, size_t size)
 
 	for (k = 0; k < size; ++k)
 		array[k] = temp[k];
-	
+
 	printf("[Done]: ");
 	print_array(array, size);
 }
